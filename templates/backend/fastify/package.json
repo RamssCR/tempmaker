@@ -1,0 +1,59 @@
+{
+  "name": "placeholder",
+  "version": "1.0.0",
+  "main": "dist/app.js",
+  "scripts": {
+    "start": "node --env-file-if-exists=.env dist/app.js",
+    "dev": "tsx --watch --env-file-if-exists=.env src/app.ts",
+    "build": "tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json --resolve-full-paths",
+    "lint": "eslint --ext .ts .",
+    "test": "vitest --coverage --reporter=default --reporter=html",
+    "test:coverage": "vitest --coverage",
+    "prepare": "husky"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@commitlint/cli": "^21.0.2",
+    "@commitlint/config-conventional": "^21.0.2",
+    "@eslint/js": "^10.0.1",
+    "@types/eslint-plugin-security": "^3.0.1",
+    "@types/node": "^25.9.3",
+    "@vitest/coverage-v8": "^4.1.9",
+    "@vitest/ui": "^4.1.9",
+    "commitlint": "^21.0.2",
+    "eslint": "^10.5.0",
+    "eslint-plugin-n": "^18.1.0",
+    "eslint-plugin-security": "^4.0.1",
+    "globals": "^17.6.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.7",
+    "prettier": "^3.8.4",
+    "tsc-alias": "^1.8.17",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.61.1",
+    "vitest": "^4.1.9"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.3.0",
+    "@fastify/helmet": "^13.1.0",
+    "@fastify/rate-limit": "^11.1.0",
+    "@fastify/throttle": "^3.0.2",
+    "fastify": "^5.10.0",
+    "fastify-plugin": "^6.0.0",
+    "fastify-type-provider-zod": "^7.0.0",
+    "http-status": "^2.1.0",
+    "pino": "^10.3.1",
+    "zod": "^4.4.3"
+  },
+  "lint-staged": {
+    "*.{ts,mts}": [
+      "prettier --write",
+      "eslint --fix",
+      "vitest --changed"
+    ]
+  },
+  "allowScripts": {
+    "esbuild@0.28.1": true
+  }
+}

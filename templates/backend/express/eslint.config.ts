@@ -2,6 +2,7 @@ import { defineConfig, globalIgnores } from 'eslint/config'
 import globals from 'globals'
 import js from '@eslint/js'
 import nodePlugin from 'eslint-plugin-n'
+import security from 'eslint-plugin-security'
 import tseslint from 'typescript-eslint'
 
 export default defineConfig([
@@ -15,6 +16,7 @@ export default defineConfig([
     ]),
     tseslint.configs.strict,
     tseslint.configs.stylisticTypeChecked,
+    security.configs.recommended,
     {
         files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
         plugins: { js, nodePlugin },

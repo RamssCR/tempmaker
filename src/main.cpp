@@ -1,6 +1,5 @@
-#include <iostream>
+#include "scaffolder/ui/wizard.hpp"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+    TempMaker::UI::start_wizard();
 }

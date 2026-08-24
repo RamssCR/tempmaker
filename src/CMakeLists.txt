@@ -4,12 +4,15 @@ set(BOOST_ENABLE_CMAKE ON CACHE BOOL "" FORCE)
 
 add_library(ScaffolderLib STATIC
     utils/package_manager.cpp
+    ui/components/input_name.cpp
+    ui/components/radio_category.cpp
+    ui/wizard.cpp
 )
 
 target_include_directories(ScaffolderLib PUBLIC ${PROJECT_SOURCE_DIR}/include)
 target_link_libraries(ScaffolderLib
-    PRIVATE ftxui::ftxui nlohmann_json::nlohmann_json
-    PUBLIC Boost::process
+    PRIVATE nlohmann_json::nlohmann_json
+    PUBLIC ftxui::ftxui Boost::process
 )
 
 add_executable(App main.cpp)

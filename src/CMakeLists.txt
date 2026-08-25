@@ -4,8 +4,6 @@ set(BOOST_ENABLE_CMAKE ON CACHE BOOL "" FORCE)
 
 add_library(ScaffolderLib STATIC
     utils/package_manager.cpp
-    ui/components/input_name.cpp
-    ui/components/radio_category.cpp
     ui/wizard.cpp
 )
 

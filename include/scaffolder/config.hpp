@@ -3,11 +3,6 @@
 #include <string_view>
 
 namespace TempMaker {
-    enum Category {
-        Frontend,
-        Backend,
-    };
-
     struct Stack {
         std::string library{};
         std::string framework{};
@@ -16,7 +11,7 @@ namespace TempMaker {
 
     struct TemplateConfig {
         std::string name{};
-        Category category{};
+        std::string category{};
         std::string package_manager{};
         Stack stack{};
         bool git{};

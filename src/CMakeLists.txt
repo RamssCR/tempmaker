@@ -5,6 +5,8 @@ set(BOOST_ENABLE_CMAKE ON CACHE BOOL "" FORCE)
 add_library(ScaffolderLib STATIC
     utils/package_manager.cpp
     ui/wizard.cpp
+    ui/input.cpp
+    ui/radio.cpp
 )
 
 target_include_directories(ScaffolderLib PUBLIC ${PROJECT_SOURCE_DIR}/include)
